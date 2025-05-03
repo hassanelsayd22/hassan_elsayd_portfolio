@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient: linear-gradient(
+    135deg,
+    #6366f1 0%,
+    #8b5cf6 50%,
+    #ec4899 100%
+  );
+  --secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+.max-width {
+  @apply lg:mx-auto lg:px-24 xl:px-48 px-5;
+}
+
+.bg-gradient {
+  background: var(--primary-gradient);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+  background-image: var(--primary-gradient);
+}
+
+.section {
+  @apply pt-28 md:pt-24 xl:pt-16 2xl:pt-20;
+}
+
+.text-content {
+  @apply dark:text-gray-200 text-gray-800;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f8fafc;
+  @apply dark:bg-gray-900;
+  font-family: "Inter", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+}
+
+/* Hover effects */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Card styles */
+.card {
+  @apply rounded-xl shadow-lg p-6 hover-scale glass;
+}
